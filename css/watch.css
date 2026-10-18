@@ -1,0 +1,411 @@
+/* A square at 68% of the display fits fully inside its circular boundary. */
+.watch,.watch body{
+  width:100%;
+  height:100%;
+  min-height:0;
+  background:#101a14;
+  color:#e8ecd8;
+  overflow:hidden
+}
+
+.watch body{
+  font-size:.8rem
+}
+
+.watch .site-header,.watch .intro,.watch .player-row,.watch .site-footer,.watch .board-hint,.watch .autosave,.watch .rank-labels,.watch .file-labels,.watch .moves-card,.watch .watch-note{
+  display:none
+}
+
+.watch .workspace{
+  position:absolute;
+  width:22.5rem;
+  height:22.5rem;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  border-radius:50%
+}
+
+.watch .game-layout{
+  display:block
+}
+
+.watch .play-area{
+  margin:0;
+  width:100%;
+  max-width:none
+}
+
+.watch .watch-status{
+  position:absolute;
+  display:block;
+  top:.75rem;
+  left:4rem;
+  right:4rem;
+  line-height:2.75rem;
+  height:2.75rem;
+  font-size:.77rem;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.watch .board-frame{
+  position:absolute;
+  width:15.3rem;
+  height:15.3rem;
+  left:3.6rem;
+  top:3.6rem;
+  padding:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  max-width:none;
+  margin:0
+}
+
+.watch .board{
+  height:100%;
+  width:100%;
+  aspect-ratio:auto
+}
+
+.watch .square{
+  height:12.5%;
+  aspect-ratio:auto;
+  min-height:0
+}
+
+.watch .piece{
+  filter:none;
+  width:92%;
+  height:92%
+}
+
+.watch .square.legal:after{
+  width:25%;
+  height:25%
+}
+
+.watch .square.capture:after{
+  border-width:3px
+}
+
+.watch .square.selected{
+  box-shadow:inset 0 0 0 2px #a49353
+}
+
+.watch .board-toolbar{
+  position:absolute;
+  top:19rem;
+  left:6.3rem;
+  right:6.3rem;
+  height:3.1rem;
+  margin:0;
+  padding:0;
+  border:0;
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center
+}
+
+.watch .toolbar-left{
+  display:flex
+}
+
+.watch .tool-button{
+  height:2.75rem;
+  min-width:2.75rem;
+  width:2.75rem;
+  margin:0 .15rem;
+  padding:0;
+  border-radius:50%;
+  color:#c3cfb3;
+  background:transparent
+}
+
+.watch .tool-button .icon{
+  width:1.15rem;
+  height:1.15rem;
+  margin:0
+}
+
+.watch .tool-button span{
+  display:none
+}
+
+.watch #watch-menu{
+  display:flex
+}
+
+.watch .sidebar{
+  display:none;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:22.5rem;
+  height:22.5rem;
+  background:#101a14;
+  z-index:10;
+  margin:0;
+  max-width:none;
+  border-radius:50%;
+  overflow-y:auto;
+  scrollbar-width:none
+}
+
+.watch .sidebar::-webkit-scrollbar{
+  display:none
+}
+
+.watch .sidebar.open{
+  display:block
+}
+
+.watch .settings-card{
+  background:transparent;
+  color:#e8ecd8;
+  border:0;
+  border-radius:0;
+  width:15rem;
+  margin:2.6rem auto;
+  padding:0 0 1rem;
+  box-shadow:none
+}
+
+.watch .card-heading{
+  margin:0 0 .7rem
+}
+
+.watch .card-heading .eyebrow{
+  display:none
+}
+
+.watch h2{
+  font-size:1.3rem;
+  letter-spacing:0;
+  margin:0
+}
+
+.watch #settings-close{
+  display:flex;
+  flex-shrink:0;
+  color:#e8ecd8
+}
+
+.watch .mode-picker{
+  background:#26342a;
+  padding:.25rem;
+  border-radius:.5rem
+}
+
+.watch .mode-option{
+  min-height:2.75rem;
+  font-size:.68rem;
+  color:#bbc7ac
+}
+
+.watch .mode-option.active{
+  background:#b9cc9c;
+  color:#213821
+}
+
+.watch .mode-option .icon{
+  width:.9rem;
+  height:.9rem;
+  margin-right:.35rem
+}
+
+.watch .mode-description{
+  font-size:.65rem;
+  color:#9eae91;
+  margin:.65rem 0 1rem;
+  line-height:1.5
+}
+
+.watch .field-heading{
+  font-size:.6rem;
+  letter-spacing:1px
+}
+
+.watch .field-heading>span:last-child{
+  font-size:.65rem;
+  color:#b3c49c
+}
+
+.watch .level-control{
+  margin:.3rem 0 0
+}
+
+.watch .stepper{
+  width:2.75rem;
+  height:2.75rem;
+  background:#26342a;
+  border:1px solid #45513d;
+  color:#e6edda;
+  font-size:1.4rem
+}
+
+.watch .level-readout strong{
+  font-size:1.8rem
+}
+
+.watch .level-readout span{
+  font-size:.7rem
+}
+
+.watch .level-slider{
+  margin:.5rem 0 .2rem;
+  height:1.5rem
+}
+
+.watch .range-labels{
+  font-size:.55rem;
+  color:#a6b497
+}
+
+.watch .color-heading{
+  margin:1rem 0 .5rem
+}
+
+.watch .color-picker{
+  margin:0 -.2rem
+}
+
+.watch .color-option{
+  min-height:2.75rem;
+  font-size:.7rem;
+  color:#a6b497;
+  border-color:#46523c;
+  margin:0 .2rem;
+  padding:0 .65rem
+}
+
+.watch .color-option.active{
+  background:#354a30;
+  color:#e6edda;
+  border-color:#899c6f
+}
+
+.watch .button-primary{
+  margin-top:1rem;
+  background:#b9cc9c;
+  color:#1b331f;
+  min-height:2.75rem;
+  font-size:.8rem;
+  padding:0 1rem
+}
+
+.watch .settings-note{
+  font-size:.6rem;
+  color:#a6b497;
+  margin:.7rem 0
+}
+
+.watch .solo-note{
+  min-height:0;
+  padding:.6rem;
+  color:#acbd9b
+}
+
+.watch .solo-note h3{
+  font-size:1.2rem
+}
+
+.watch .solo-note p{
+  font-size:.7rem;
+  line-height:1.7
+}
+
+.watch .solo-note>.icon{
+  display:none
+}
+
+.watch .modal-backdrop{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:0;
+  border-radius:50%;
+  background:#101a14
+}
+
+.watch .dialog{
+  width:16rem;
+  max-height:17rem;
+  padding:1.1rem;
+  background:transparent;
+  color:#e8ecd8;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:auto
+}
+
+.watch .dialog h2{
+  font-size:1.45rem;
+  margin:.6rem 0
+}
+
+.watch .dialog .eyebrow{
+  font-size:.5rem;
+  color:#aebf98
+}
+
+.watch .dialog p,.watch .dialog li{
+  font-size:.75rem;
+  color:#aebf98;
+  line-height:1.6
+}
+
+.watch .dialog-close{
+  top:0;
+  right:0;
+  color:#d4dec4
+}
+
+.watch .dialog-actions{
+  margin-top:1rem
+}
+
+.watch .dialog-actions .button{
+  min-height:2.75rem;
+  font-size:.75rem;
+  padding:0 .75rem
+}
+
+.watch .dialog-actions .button-primary{
+  margin:0
+}
+
+.watch .button-outline{
+  border-color:#5b6b4c;
+  color:#ccdab9
+}
+
+.watch .promotion-choice{
+  width:3rem;
+  height:3rem;
+  padding:0;
+  margin:.15rem
+}
+
+.watch .toast{
+  bottom:4rem;
+  max-width:15rem;
+  font-size:.72rem;
+  padding:.6rem .8rem;
+  border-radius:.5rem
+}
+
+.watch .preview-backdrop{
+  display:none!important
+}

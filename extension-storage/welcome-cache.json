@@ -1,0 +1,31 @@
+{
+  "packageList": [
+    {
+      "id": "TIZEN-EMULATOR-MANAGER",
+      "name": "TIZEN-EMULATOR-MANAGER",
+      "version": "latest",
+      "devGroup": "emulator-manager"
+    },
+    {
+      "id": "TIZEN-PACKAGE-MANAGER",
+      "name": "TIZEN-PACKAGE-MANAGER",
+      "version": "latest",
+      "devGroup": "package-manager"
+    },
+    {
+      "id": "TIZEN-CERTIFICATE-MANAGER",
+      "name": "TIZEN-CERTIFICATE-MANAGER",
+      "version": "latest",
+      "devGroup": "certificate-manager"
+    },
+    {
+      "id": "TIZEN-DEVICE-MANAGER",
+      "name": "TIZEN-DEVICE-MANAGER",
+      "version": "latest",
+      "devGroup": "device-manager"
+    }
+  ],
+  "packageCount": 4,
+  "timestamp": 1792337365266,
+  "version": "1.0.0"
+}

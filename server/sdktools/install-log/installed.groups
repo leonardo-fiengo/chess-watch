@@ -1,0 +1,26 @@
+[
+  {
+    "DevGroup": "emulator-manager",
+    "TimeStamp": "2026-10-18 17:29:06"
+  },
+  {
+    "DevGroup": "package-manager",
+    "TimeStamp": "2026-10-18 17:29:07"
+  },
+  {
+    "DevGroup": "certificate-manager",
+    "TimeStamp": "2026-10-18 17:29:07"
+  },
+  {
+    "DevGroup": "device-manager",
+    "TimeStamp": "2026-10-18 17:29:07"
+  },
+  {
+    "DevGroup": "core-app",
+    "TimeStamp": "2026-10-18 17:30:02"
+  },
+  {
+    "DevGroup": "core-app",
+    "PlatformVersion": "10.0"
+  }
+]

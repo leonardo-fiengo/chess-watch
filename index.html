@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#243d32">
+  <meta name="description" content="A little chess, wherever you are. Practice at your own pace or challenge Stockfish, on your screen or your wrist.">
+  <title>Orbit — a little chess, anywhere</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/watch.css">
+  <script src="js/layout.js"></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 0 14" transform="translate(0 -2)"/></symbol>
+    <symbol id="i-flip" viewBox="0 0 24 24"><path d="M4 8h15l-4-4m5 12H5l4 4M4 8V4m16 12v4"/></symbol>
+    <symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="m8 5 1-4h6l1 4M8 19l1 4h6l1-4m-4-11v4l3 2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-solo" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="4"/><path d="M12 2v4M1 11v5m22-5v5M9 15h6M8 10v1m8-1v1"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C-1 8 8 2 21 3c0 12-7 18-16 16Zm0 0L16 8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Orbit Chess home"><img src="assets/mark.svg" alt="" width="38" height="38"><span>orbit<span class="brand-dot">.</span></span><span class="brand-category">CHESS</span></a>
+    <nav class="header-actions" aria-label="App tools">
+      <span class="offline"><span></span> A little chess, anywhere.</span>
+      <button id="preview-open" class="button button-outline"><svg class="icon"><use xlink:href="#i-watch"/></svg> Watch preview</button>
+      <button id="help-open" class="icon-button" aria-label="How to play" title="How to play"><svg class="icon"><use xlink:href="#i-info"/></svg></button>
+    </nav>
+  </header>
+
+  <main class="workspace">
+    <section class="intro" aria-label="Welcome">
+      <div><p class="eyebrow">LESS SCROLLING. MORE STRATEGY.</p><h1>Your move.<span> Your moment.</span></h1></div>
+      <p>No rush. No distractions.<br>Just you and the next good move.</p>
+    </section>
+
+    <div class="game-layout">
+      <section class="play-area" aria-label="Chess game">
+        <div class="player-row opponent-row">
+          <div class="player-identity"><span class="avatar avatar-dark" id="opponent-avatar"><svg class="icon"><use xlink:href="#i-bot"/></svg></span><div><strong id="opponent-name">Stockfish</strong><span id="opponent-detail">Level 3 · Casual</span></div></div>
+          <span class="player-color"><span class="color-dot black-dot"></span><span id="opponent-color">Black pieces</span></span>
+        </div>
+        <button class="watch-status" id="watch-status" aria-live="polite" title="Confirm bezel selection or retry the engine">White to move</button>
+        <div class="board-frame">
+          <div id="rank-labels" class="rank-labels" aria-hidden="true"></div>
+          <div id="board" class="board" role="group" aria-label="Chess board. Select a piece, then a highlighted square."></div>
+          <div id="file-labels" class="file-labels" aria-hidden="true"></div>
+        </div>
+        <div class="player-row self-row">
+          <div class="player-identity"><span class="avatar avatar-light"><svg class="icon"><use xlink:href="#i-solo"/></svg></span><div><strong id="self-name">You</strong><span id="self-detail">A fresh perspective</span></div></div>
+          <span id="turn-badge" class="turn-badge"><span></span> Your turn</span>
+        </div>
+        <div class="board-toolbar">
+          <div class="toolbar-left"><button id="undo" class="tool-button" title="Take back your last turn"><svg class="icon"><use xlink:href="#i-undo"/></svg><span>Undo</span></button><button id="flip" class="tool-button" title="Flip the board"><svg class="icon"><use xlink:href="#i-flip"/></svg><span>Flip board</span></button></div>
+          <span class="autosave"><span></span> Saved on this device</span>
+          <button id="watch-menu" class="tool-button" aria-label="Game settings"><svg class="icon"><use xlink:href="#i-menu"/></svg></button>
+        </div>
+        <p class="board-hint" id="board-hint">A small board. Endless possibilities.</p>
+      </section>
+
+      <aside id="sidebar" class="sidebar" aria-label="Game controls">
+        <section class="settings-card">
+          <div class="card-heading"><div><p class="eyebrow">MAKE IT YOUR GAME</p><h2>A worthy opponent.</h2></div><button id="settings-close" class="icon-button" aria-label="Close settings"><svg class="icon"><use xlink:href="#i-close"/></svg></button></div>
+          <div class="mode-picker" role="group" aria-label="Game mode">
+            <button id="mode-bot" class="mode-option active" aria-pressed="true"><svg class="icon"><use xlink:href="#i-bot"/></svg><span>Play the bot</span></button>
+            <button id="mode-solo" class="mode-option" aria-pressed="false"><svg class="icon"><use xlink:href="#i-solo"/></svg><span>Play solo</span></button>
+          </div>
+          <p id="mode-description" class="mode-description">A thinking partner for every level.</p>
+          <div id="bot-settings">
+            <div class="field-heading"><label for="level">DIFFICULTY</label><span id="level-name">Casual</span></div>
+            <div class="level-control"><button id="level-down" class="stepper" aria-label="Decrease difficulty">−</button><div class="level-readout"><strong id="level-value">3</strong><span>/ 8</span></div><button id="level-up" class="stepper" aria-label="Increase difficulty">+</button></div>
+            <input id="level" class="level-slider" aria-label="Stockfish difficulty" type="range" min="1" max="8" value="3" step="1">
+            <div class="range-labels"><span>A gentle start</span><span>A real challenge</span></div>
+            <div class="field-heading color-heading"><span>YOUR PIECES</span><span class="muted">Next game</span></div>
+            <div class="color-picker" role="group" aria-label="Your color for the next game"><button id="color-white" class="color-option active" aria-pressed="true"><span class="color-dot white-dot"></span>White<svg class="icon"><use xlink:href="#i-check"/></svg></button><button id="color-black" class="color-option" aria-pressed="false"><span class="color-dot black-dot"></span>Black<svg class="icon"><use xlink:href="#i-check"/></svg></button></div>
+          </div>
+          <div id="solo-note" class="solo-note" hidden><svg class="icon"><use xlink:href="#i-leaf"/></svg><h3>Room to explore.</h3><p>Move both sides, try a new opening, or share the board with a friend. Every move is yours.</p></div>
+          <button id="new-game" class="button button-primary"><span>New game</span><svg class="icon"><use xlink:href="#i-arrow"/></svg></button>
+          <p class="settings-note" id="settings-note">No clock. Play at your own pace.</p>
+        </section>
+        <section class="moves-card" aria-label="Move history">
+          <div class="moves-heading"><h3>The game so far</h3><span id="move-count">0 moves</span><button id="export" class="icon-button" aria-label="Export game as PGN" title="Export PGN"><svg class="icon"><use xlink:href="#i-download"/></svg></button></div>
+          <div id="move-history" class="move-history"><div class="empty-history"><span class="mini-board" aria-hidden="true"></span><p>Every game starts with a possibility.<br><span>Make your first move.</span></p></div></div>
+          <div id="game-status" class="game-status" role="status"><span class="status-dot"></span><span id="status-text">White to move</span><button id="retry-engine" hidden>Retry</button></div>
+        </section>
+        <div class="watch-note"><svg class="icon"><use xlink:href="#i-watch"/></svg><p>Big ideas. Small screen.<br><span>Thoughtfully made for a round watch.</span></p><span class="tiny-label">45 mm</span></div>
+      </aside>
+    </div>
+    <footer class="site-footer"><span>STAY CURIOUS. PLAY ANOTHER.</span><span>Powered by chess.js &amp; Stockfish <span class="footer-dot">·</span> Works offline</span></footer>
+  </main>
+
+  <div id="modal-backdrop" class="modal-backdrop" hidden>
+    <section id="dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <button id="dialog-close" class="icon-button dialog-close" aria-label="Close dialog"><svg class="icon"><use xlink:href="#i-close"/></svg></button>
+      <p id="dialog-eyebrow" class="eyebrow">ORBIT CHESS</p><h2 id="dialog-title"></h2><div id="dialog-content"></div><div id="dialog-actions" class="dialog-actions"></div>
+    </section>
+  </div>
+  <div id="preview-backdrop" class="preview-backdrop" role="dialog" aria-modal="true" aria-label="Watch preview" hidden>
+    <button id="preview-close" class="button button-outline"><svg class="icon"><use xlink:href="#i-close"/></svg> Close preview</button>
+    <p class="eyebrow">A LITTLE CHESS. ON YOUR WRIST.</p>
+    <div class="watch-case"><div class="watch-screen"><iframe id="watch-preview" title="Interactive 360 pixel round watch preview"></iframe></div></div>
+    <p class="preview-caption">Orbit on a 45 mm round display<span>360 × 360 preview · Tap a piece to begin</span></p>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="vendor/chess.js"></script>
+  <script src="js/pieces.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/dialog.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+[
+  {
+    "DevGroup": "emulator-manager",
+    "Package": "emulator-manager",
+    "Version": "10.1.2",
+    "TimeStamp": "2026-10-18 17:29:06",
+    "Duration": "",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "package-manager",
+    "Package": "package-manager",
+    "Version": "10.1.2",
+    "TimeStamp": "2026-10-18 17:29:07",
+    "Duration": "",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "certificate-manager",
+    "Package": "certificate-manager",
+    "Version": "10.1.2",
+    "TimeStamp": "2026-10-18 17:29:07",
+    "Duration": "",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "device-manager",
+    "Package": "device-manager",
+    "Version": "10.1.2",
+    "TimeStamp": "2026-10-18 17:29:07",
+    "Duration": "",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "web-privilege-checker",
+    "Version": "0.0.2",
+    "TimeStamp": "2026-10-18 17:30:02",
+    "Duration": "00:00:37",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "tizen-core",
+    "Version": "10.0.18",
+    "TimeStamp": "2026-10-18 17:30:06",
+    "Duration": "00:00:40",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "version-manager",
+    "Version": "2.2.25",
+    "TimeStamp": "2026-10-18 17:30:17",
+    "Duration": "00:00:09",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "COMMON-MANDATORY",
+    "Version": "3.1.3",
+    "TimeStamp": "2026-10-18 17:30:17",
+    "Duration": "00:00:09",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "sdk-utils",
+    "Version": "0.2.26",
+    "TimeStamp": "2026-10-18 17:30:18",
+    "Duration": "00:00:09",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "certificate-encryptor",
+    "Version": "1.0.10",
+    "TimeStamp": "2026-10-18 17:30:18",
+    "Duration": "00:00:10",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "sdk-info",
+    "Version": "2.5.0",
+    "TimeStamp": "2026-10-18 17:30:21",
+    "Duration": "00:00:12",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "sdk-utils-core",
+    "Version": "0.2.26",
+    "TimeStamp": "2026-10-18 17:30:21",
+    "Duration": "00:00:12",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "sdb",
+    "Version": "4.2.36",
+    "TimeStamp": "2026-10-18 17:30:23",
+    "Duration": "00:00:15",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  },
+  {
+    "DevGroup": "core-app",
+    "Package": "certificate-generator",
+    "Version": "0.1.4",
+    "TimeStamp": "2026-10-18 17:30:29",
+    "Duration": "00:00:21",
+    "PlatformVersions": [
+      "10.0"
+    ]
+  }
+]
